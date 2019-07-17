@@ -1,0 +1,24 @@
+language: go
+
+sudo: required
+
+services:
+  - docker
+
+env:
+  global:
+    - IMAGE_NAME=limed/travis-test
+    - COMMIT_HASH=${TRAVIS_COMMIT::8}
+
+before_install:
+  - echo "before_install"
+
+jobs:
+  include:
+    - stage: Build Docker Image
+      script:
+        - echo "Building image"
+        - docker build -t ${IMAGE_NAME}:latest -t ${IMAGE_NAME}:${COMMIT_HASH} .
+        - docker images
+
+      if: (branch = master)
