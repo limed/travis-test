@@ -7,7 +7,7 @@ WORKDIR /build
 COPY main.go /build
 RUN go build -o main .
 
-FROM alpine
+FROM alpine:latest
 
 RUN adduser -S -D -H -h /app appuser
 USER appuser
