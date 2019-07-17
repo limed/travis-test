@@ -9,9 +9,12 @@ env:
   global:
     - IMAGE_NAME=limed/travis-test
     - COMMIT_HASH=${TRAVIS_COMMIT::8}
+    - secure: "tH1TVhvAC8qy+DC7jnSJCxRsvYu4knPHmpjbNA0YKK2V7j+T3m2dl4ezYolhBLTlf+SdEfBQQhneWaSq0/F/kdQOrYbGolniXNjvnVJFd3os1TJ3fBDRihicPraKSJmXaaohdoBXPokOmkwaUj4Z0Ahmboy8RHAwdZGNVy/M84uiaUuri72FkpxI26AbRnjCnbPxHags4EiYhs0hZ+pPEPrjP7rLzzoSdxl/IzsRiNhrmnrQQFBiJ28Lz4NbXS3sBRP0zw7vyqSAnzTH7Ifx1dHI33+LVa97xJSpyT0ixlJ2wwgv1sPeJPUggtN8mYkYRhgg6UMA7VU5lKkQmZkgAjCGNfF575H8LJzaD9dI9kZ/iISOf4JQ42T8cHFSuTCwjkV4LlQ/63yYmaqABKtLzlSi+3fVs8hb9Kic2uf+AqLALmrARquVTTP3sRk2vh46+dbQHkstEGwNahafNENpnw3Vc8RonhxWWMCaQ5/r8kKKBrw5xF4meHtU/T39o+iwsFe5CBQXIR00+5r0eIkDifKvl9j2hguvKV0kjwUNWRqTISrv8obTgMbdSodb/9C8/1YuCWz28DePPJ+cT98+4RRUvokUqP1Gds0cU+EV52qt3FmylgxaZhZPoDZx32mc9PJdd04yVUJEcU7db+nyCJsxNsuGj3TIinxSLs74ZtM="
+    - secure: "SgGZEwbgr3iPPT4gHsEVQJovURj8G3/Fgv43gxfnwf+RqLlJS2jO1nYL257x9rnRvOs7MP54gC+zptO2TE8zZCqQqxFaARdnu7OcsHpEbVHunpg39vfTNPqqeozWk6qQNr4fK2A8Lrwj1kz9m6HHON2TBFREiaV4PrYzasRdIGZV9RlYsstT91P/0hj3wzwdfI/cqthT/WMctRB0w5QOM4U6YLdu2nEmU9MvmM2HGyOaxf5dMs3DHeGSFsdrexhpL3iP48u6dKBThmEsnGc8ZX8JNXG9yJfsx26JA4661FrWo656tQNCe9MtsyT3usFSfHhhCSPfxZHgDFKGMSWQaoTCvdZ6DcefspEIcNG9byASSidlKcm9rEx6qgOfNkxzKiSBgNxc3zL687ZxAxJ2h6w2R3MpXy6irgVZEwsQe2DK+51Y1O5X3ZZBKVfb4SZvKhsxoHW4d+3/XzMTk4KLzrJKgky83R6+HKWZJEpVUyTHAIDQRH+NM7dm/iC/hHs9mA4Yb9e520vh9IbxbcjipBoVRKyS9FjkA5P9laAX7bfn2PhNwkuYP8xPed/kwVba43FCefv1ngGMEHQGjaQbskVMTpucN3qzgHZVfe2Vw4LUcqsH+k3n+FVXBBghLe1O5XoFhw3UlIHzwV6k2KWEgtxQnGF9aDPRoC/Za9zVAMU="
 
 before_install:
-  - echo "before_install"
+  - echo "Logging in to dockerhub"
+  - echo "${DOCKERHUB_PASSWORD}" | docker login -u "${DOCKERHUB_USER}" --pasword-stdin
 
 jobs:
   include:
@@ -20,5 +23,4 @@ jobs:
         - echo "Building image"
         - docker build -t ${IMAGE_NAME}:latest -t ${IMAGE_NAME}:${COMMIT_HASH} .
         - docker images
-
       if: (branch = master)
