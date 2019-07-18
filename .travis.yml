@@ -5,7 +5,7 @@ services:
 env:
   matrix:
   - IMAGE_NAME="limed/travis-test"
-  - COMMIT_HASH="${TRAVIS_COMMIT::8}"
+  - COMMIT=${TRAVIS_COMMIT::8}
   global:
   - secure: G+WsNhahU/9AUaMCbmG4PhyGaYqzR3gcHJQdXvqo5TLkV+7ScdpOo5PKduH7WskOmMzENc+UD+zjgXx+jH7xOMcXJ2KnId60/TNuH9LibbLE5LmP9eR6H6pAOaf2KxvKvMWcS/Xb7Iu+1w96Egc87EuvK6DwGUC5O2Dmo5gC00Ar+tpkGgGDxhVIl1XHEHLMNWtAlLFdOn7nFISSSU/jFX4PniIQo7G2VnmBnPS1o2BRYLrD07p91JhiJw8fsN79xE+46aFl81iGJVfpoaTpWlAQabDwb62CR9ngDUi6fCncgZ+ZvICVtgmOMjmDxgXw1cas51D6dRYNk9Ljjt+1oyTppcQndJd+RcH7sBwtWQM3M6rLRYSDuKWqfuD4/OZCE7SmI//Wxv6nv6P8tYjEAxo7rfSOKMR3KGCiwwDlXrxIm/NQwoA9OdD6UdRvn1cnSz0G/AVMsdKgixNMiHE+pGvVBpq6uEaQkK0xp4baIj55tuuXznT1YTtq52BWIYOTOK2LSUAMMkwjwvu4JPYfYKH7EYpcUQmqNqJDBdz1uwX/HCEGmGJrYy/X5A/5k5YGjhm38l2LfdaShmPbEXzEG9C0OSvE5FOJ0cu2/gcd5A7PjtbBCOWd0oUH9sThgl5uA+ph8Ugyk5vDRrwJAsezrYdBkzFQPghwPkLQIyYJo1Q=
   - secure: eqRadwjOhyWYAA2rdg2avNoxnkzB6XQj1Fgbv7EPRFZmQ7kV454j3jsgDQR/etXxsgfY/MOWd9cs1j17XnWHFrKdUGg/nGOYnCXnxFK9gZkaz4WsUBut7ADor9euXpahah99esVHaPeSKL/Ly5ujIAwFfNMieNvK0UV/dOWHuw7PfZ/kCgtInx90yuqMycHxBwTWPWUwEeOZgpxipth6nqlH+HyVM7E7t03SrmcYkE7T/G5/AC096h4yY6Wy+wRPl9K+ZJ/gPkpc5NFRztRfCeUGEbaaZVlmPxPmYS23gf09hZiZvzVARkxBRt83IzVEl2vnv3g4UHsJnD3hWmJIkJRttfVzdmARHVH2FJSjHJ3zMxKEfH9O06jwAbbM4LNCkkn92LnKZEZVlhWvAHnGzDxrUt2VJ07PH5LcMenoT1G6n7LgQKaRmd5tbzQy0IF+WjXjBYWLoks6pQGuot6HnsVtOM2n1n/Wrxx0tGWAsQ7ec/dyll3H0qwCs/C/yWxlPjW90rdfh2dDMAMZOcXB7hAwfCIxM3G61H/JnbACJlHOEppr7uHTXEFmtbS4D3+FaRMR9gwvjs0YEkLwZIzjdj6s//5SWzME60sY1ONdxDsQ7AEMCRqgXEsNrSzKqt0L/6WJUl9pJFYYitY0eGlAZ4Y1pA60OIFhn7HyUkQsHkQ=
@@ -22,6 +22,5 @@ jobs:
   include:
   - stage: Build Docker Image
     script:
-    - docker build -t "$IMAGE_NAME" -t "$IMAGE_NAME":"$COMMIT_HASH" .
-    - docker push "$IMAGE_NAME"
+    - docker build --tag "$IMAGE_NAME" --tag "$IMAGE_NAME:$COMMIT" .
     - docker images
