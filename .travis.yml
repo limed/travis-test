@@ -13,7 +13,7 @@ env:
 
 before_install:
 - echo "Logging in to dockerhub"
-- echo "${DOCKERHUB_PASSWORD}" | docker login -e="$DOCKERHUB_EMAIL" -u "${DOCKERHUB_USER}" --password-stdin
+- docker login -u "${DOCKERHUB_USER}" -p "${DOCKERHUB_PASSWORD}"
 
 jobs:
   include:
