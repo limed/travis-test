@@ -22,4 +22,6 @@ jobs:
   - stage: Build Docker Image
     script:
     - docker build --tag "$IMAGE_NAME" --tag "$IMAGE_NAME:$COMMIT" .
+    - docker push "$IMAGE_NAME"
+    - docker push "$IMAGE_NAME:$COMMIT"
     - docker images
