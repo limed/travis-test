@@ -1,26 +1,25 @@
 language: go
-
 sudo: required
-
 services:
-  - docker
+- docker
 
 env:
   global:
-    - IMAGE_NAME=limed/travis-test
-    - COMMIT_HASH=${TRAVIS_COMMIT::8}
-    - secure: "tH1TVhvAC8qy+DC7jnSJCxRsvYu4knPHmpjbNA0YKK2V7j+T3m2dl4ezYolhBLTlf+SdEfBQQhneWaSq0/F/kdQOrYbGolniXNjvnVJFd3os1TJ3fBDRihicPraKSJmXaaohdoBXPokOmkwaUj4Z0Ahmboy8RHAwdZGNVy/M84uiaUuri72FkpxI26AbRnjCnbPxHags4EiYhs0hZ+pPEPrjP7rLzzoSdxl/IzsRiNhrmnrQQFBiJ28Lz4NbXS3sBRP0zw7vyqSAnzTH7Ifx1dHI33+LVa97xJSpyT0ixlJ2wwgv1sPeJPUggtN8mYkYRhgg6UMA7VU5lKkQmZkgAjCGNfF575H8LJzaD9dI9kZ/iISOf4JQ42T8cHFSuTCwjkV4LlQ/63yYmaqABKtLzlSi+3fVs8hb9Kic2uf+AqLALmrARquVTTP3sRk2vh46+dbQHkstEGwNahafNENpnw3Vc8RonhxWWMCaQ5/r8kKKBrw5xF4meHtU/T39o+iwsFe5CBQXIR00+5r0eIkDifKvl9j2hguvKV0kjwUNWRqTISrv8obTgMbdSodb/9C8/1YuCWz28DePPJ+cT98+4RRUvokUqP1Gds0cU+EV52qt3FmylgxaZhZPoDZx32mc9PJdd04yVUJEcU7db+nyCJsxNsuGj3TIinxSLs74ZtM="
-    - secure: "L5IsJAPgN7u8hJJF+ZNxZypjFDxqEFmEfep1WyMOHYJqqyWPC+MXgzRMKdvh8vWx4M4fIgkBJBjePDsigHFxb0JvbQxT11xEHYYZb9TPUN+Ekq8sqt4uje4Vl6zvGVIokqfafiePvwxm8bTlUy55zAkQzd6SpVhsnG3dCQ/Fa+rESWYa7JoO6ODUdpReKi2SlCF9FN0FYk6NZ2FFoEJG2y01t3rxiZA1nuHUhPbkS2AEH6jqY6gjl31Ock/ON3Wch8g35aZmOGKA+gkm9cZ71ZIt9pazE4s4EoeI/bA2QVqDZ5qz2xW7y+Yx8X32Ok6xLjJAHnJRdSkgCJb2tX6Fd6HL6FcArOA8v0YeEe84QIDtHHLe6v1ePZ6gJayZeNbShzKH4yqwzCfmzsCtNeYoL1PevNEpdCqNoUO/VumLv5R7IBS8RJqcOUVF3+xI0yykNHszzOLxWBvpzgWxB2coKTFNzlCEeo4xaBGP4j0oYQUfLt6SnSxhHqxO+EcSzY4GNSMM5oWhnoYhg1rxmg8EPJ5CPXI4aB4w5Q/9vFfS1nAgCLxzPZMboajICqL/BGimUCYpQdUvgb0PonH8AYxrGHEnE5Hv/FrkuMVUqDIgU53ZU+zzDpJWlcy1OBZ4fXKU9Xt1eCxhSpldE8OPakBuxqQiiUcLSRutvNmvxJS5cuY="
+  - IMAGE_NAME=limed/travis-test
+  - COMMIT_HASH=${TRAVIS_COMMIT::8}
+  - secure: RFWHZJzloDhrQqVvhvtDFhxL7WPPhtqUh32gwIAHN9XlRnj7E4O/3z4XHbNdTuEK/YS/sQZSAVqlI5vPY1q8/fSDBq5+8XnLGyK9nzPV3bDe8JqqJo9kiyi0lURwAZj+7WPoHa/DecuLYO6krh0w5lb9oXLAU9Ct815jsstCOjIr5yHXIvk4hxCbR/qVR5a4Cg1SzQYnTr5myC/40l/R7F0h7F0eGWg6RfC5o3tbMRc5NXcSuU9FVOidEcGBbfQk4UbeiAC7yfDwaDzPH3Xwkj9lcIkXJlP9t7nmOFpzWosbY8cyPojsY0jaiu2dl0hiFJnusB7cTkDGrNkcmJuWz0v8X4phKyEbOjxqOdPrnd981CEnKQzaaa2TXSJt8VWXlDa8pnWFPRB2m7y18eIt1NSTmwx1Mi4uHZ9JaHkVBYLwV1eZBjzpVXCg51kZzA/E1R1gvxmAtruW2pkjU0K7Y976LDrDJ7mNNvRZoaAEMf+rI1sDwr5HbdOqkQyJbZfNvdVotH/im9b0SOWURZQN3OxcFqTBzINk2eTLU+fUWl9q+DlG6nPbCjZNzlL37ecIdh6qJNE+YO/6ILc29asHYBVmNCMKCCb9MLptNm6MLzsxPhoCj0IwCFCDUqKmQyNEA42q7kyhbNnSBtwA33+4tZ5F1NPnTeJ8Kic8GXUyVKg=
+  - secure: L5IsJAPgN7u8hJJF+ZNxZypjFDxqEFmEfep1WyMOHYJqqyWPC+MXgzRMKdvh8vWx4M4fIgkBJBjePDsigHFxb0JvbQxT11xEHYYZb9TPUN+Ekq8sqt4uje4Vl6zvGVIokqfafiePvwxm8bTlUy55zAkQzd6SpVhsnG3dCQ/Fa+rESWYa7JoO6ODUdpReKi2SlCF9FN0FYk6NZ2FFoEJG2y01t3rxiZA1nuHUhPbkS2AEH6jqY6gjl31Ock/ON3Wch8g35aZmOGKA+gkm9cZ71ZIt9pazE4s4EoeI/bA2QVqDZ5qz2xW7y+Yx8X32Ok6xLjJAHnJRdSkgCJb2tX6Fd6HL6FcArOA8v0YeEe84QIDtHHLe6v1ePZ6gJayZeNbShzKH4yqwzCfmzsCtNeYoL1PevNEpdCqNoUO/VumLv5R7IBS8RJqcOUVF3+xI0yykNHszzOLxWBvpzgWxB2coKTFNzlCEeo4xaBGP4j0oYQUfLt6SnSxhHqxO+EcSzY4GNSMM5oWhnoYhg1rxmg8EPJ5CPXI4aB4w5Q/9vFfS1nAgCLxzPZMboajICqL/BGimUCYpQdUvgb0PonH8AYxrGHEnE5Hv/FrkuMVUqDIgU53ZU+zzDpJWlcy1OBZ4fXKU9Xt1eCxhSpldE8OPakBuxqQiiUcLSRutvNmvxJS5cuY=
+  - secure: Y73yFRzxcjIXpfI5xJG5q7lbKOZ+LC+CyR6FqszdfwZU0gRhR9uZi/8f7l+yflPmrsI7j0HRoO779XuJRpX7RPnTdBfhC1Z8oZXOYiT1e5oQALjzItIyxoIUfMbAHeRdFBFk4kaER31oxfJLF4XPe71FpQoXC+jT3K0BStipESw0BccEsIfyCZXH3ZcFbfttkXn0js2sgBrg1K/gZZ3CAdL6znZHIly2EFhMW9hZS6CFRco2RUbbrl85+gNqvSHXkdx5Lo2mkSjvoooe1Moj6LjQwE0mwDqZk9OMq5WVpWSZquAjeNX/qCbTW5LrMegbU8EqX8VsTMkxyDFlBQs9HNfzFf+Nd211BKkpeBu/jDBYlM2jyKZphGXYaAFOkwDOK95OpwuXmozE21nOOw/8P/lpUmw/vIV0sJJaeh4Wkm3VkRLBug0TWCW2EJpcZBGyuyw39oMxIsZQOOFD8V9HGCaU0Rg8GqJNqP/hGuFJ3w7/oBlEGX7bLr82+pFmoDZyWsPZyhAaVhK3Is4SZYEEUlaEpvPblFjdkfnoXm7YDXXC2OQCV4jzMh6FYXa9DBKDolMcS4Lo9h4aDV6lGCLdCdOO7FMQrj3Q7ngLCUSJHRNNRRbHZ8nCEfjutF9MqRB+UEVKZyIfZHUqXvb2yDHGSZN27lBMJ1nKsVUX2jRrT/o=
 
 before_install:
-  - echo "Logging in to dockerhub"
-  - echo "${DOCKERHUB_PASSWORD}" | docker login -u "${DOCKERHUB_USER}" --password-stdin
+- echo "Logging in to dockerhub"
+- echo "${DOCKERHUB_PASSWORD}" | docker login -e="$DOCKERHUB_EMAIL" -u "${DOCKERHUB_USER}" --password-stdin
 
 jobs:
   include:
-    - stage: Build Docker Image
-      script:
-        - echo "Building image"
-        - docker build -t ${IMAGE_NAME}:latest -t ${IMAGE_NAME}:${COMMIT_HASH} .
-        - docker images
-      if: (branch = master)
+  - stage: Build Docker Image
+    script:
+    - echo "Building image"
+    - docker build -t ${IMAGE_NAME}:latest -t ${IMAGE_NAME}:${COMMIT_HASH} .
+    - docker images
+    if: "(branch = master)"
