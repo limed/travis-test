@@ -16,10 +16,9 @@ stages:
 - name: Build Docker Image
   if: branch = master
 
-  jobs:
+jobs:
   include:
   - stage: Build Docker Image
     script:
     - docker build -t $IMAGE_NAME:latest .
     - docker images
-    if: "(branch = master)"
