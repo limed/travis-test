@@ -3,7 +3,6 @@ sudo: required
 services:
 - docker
 env:
-  global:
   - IMAGE_NAME=limed/travis-test
   - COMMIT_HASH=${TRAVIS_COMMIT::8}
   - secure: ySV5JqntUsW6rJAkj67bazotOACR2MnrtulfDlUe/XQvPagim01xnKSbxCNCj90Yfai265sSh0wt/RenhEDmNAN7pabdNb0/wBm3qDQ35FgfPXfrbnr1OOWs8CmY0eHWgfuNM/NkGcsDeYma3epB+P+sdpQA/lPu6ahr93VVxWRzoOYjp3ThiJe+CtkpwNkFllLj6VeQUff7JGCvF88rmNZzPHYqAe7UjKQu/L5Pj0FdkPbhysm4r7l5Bspiyjtk6QoNdFa+9GwmcfCzheAfg0Z6F+ypLDU9Ia2Wla1K/nA+6W+DpcSpC2XElvR81YgMRCwErz0QWMvk+nN3Pv8h0uiTU/sVeARR+Zt3JAFBPT9dY9lIMBG+0GPegMOg46Eb90HPA4my0dJ9m0nDizOnR2bed9tyQZFQdW3oYxEfkyY5xoQ/boPSg3HUQd4Wi3yInTT+eMa8kHkNQl7H7eb9mKT1Ow9KY/gUvx+441Iq3kg5/x0H6OTI9Lm6BoXfLJBVwLZkrKyfVWhaGdv1PIOnwHpqfx/U8nUDzGO+BEdHRZ3QzkDHUKn24VovJOF8yRUJTdP+HVFCOr3TSZlkrfwteFNF6jnZxB45hI0vUEaBd2QtC6Hk7xs3xaSwPFjgOZ4fC1r/3CNQh9iK190Is8ddMuEUVWoQpr2+z8m++Cl4AjA=
