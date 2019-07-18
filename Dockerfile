@@ -12,7 +12,7 @@ FROM alpine:latest
 RUN adduser -S -D -H -h /app appuser
 USER appuser
 
-COPY --from=builder /build/main /app/
+COPY --from=build /build/main /app/
 WORKDIR /app
 
 CMD ["./main"]
