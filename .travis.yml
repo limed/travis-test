@@ -11,6 +11,12 @@ env:
 
 before_install:
 - docker logout
+- echo $IMAGE_NAME
+- echo $COMMIT_HASH
+
+stages:
+  - name: Build Docker Image
+    if: branch = master
 
 jobs:
   include:
