@@ -1,0 +1,6 @@
+---
+project_name: limed-test
+account_name: itsre-sandbox
+
+environments:
+  - stage

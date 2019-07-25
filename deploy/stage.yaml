@@ -1,0 +1,10 @@
+---
+k8s_cluster: limed-sandbox-v659pkyl
+aws_region: us-west-2
+
+namespace: stage
+
+# deployment file list
+deployments:
+  - app.deployment.yaml
+
