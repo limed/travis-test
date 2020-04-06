@@ -1,44 +1,36 @@
 language: bash
 sudo: required
 services:
-- docker
+  - docker
 env:
   global:
-  - IMAGE_NAME="limed/travis-test"
-  - COMMIT="${TRAVIS_COMMIT::8}"
-  - secure: G+WsNhahU/9AUaMCbmG4PhyGaYqzR3gcHJQdXvqo5TLkV+7ScdpOo5PKduH7WskOmMzENc+UD+zjgXx+jH7xOMcXJ2KnId60/TNuH9LibbLE5LmP9eR6H6pAOaf2KxvKvMWcS/Xb7Iu+1w96Egc87EuvK6DwGUC5O2Dmo5gC00Ar+tpkGgGDxhVIl1XHEHLMNWtAlLFdOn7nFISSSU/jFX4PniIQo7G2VnmBnPS1o2BRYLrD07p91JhiJw8fsN79xE+46aFl81iGJVfpoaTpWlAQabDwb62CR9ngDUi6fCncgZ+ZvICVtgmOMjmDxgXw1cas51D6dRYNk9Ljjt+1oyTppcQndJd+RcH7sBwtWQM3M6rLRYSDuKWqfuD4/OZCE7SmI//Wxv6nv6P8tYjEAxo7rfSOKMR3KGCiwwDlXrxIm/NQwoA9OdD6UdRvn1cnSz0G/AVMsdKgixNMiHE+pGvVBpq6uEaQkK0xp4baIj55tuuXznT1YTtq52BWIYOTOK2LSUAMMkwjwvu4JPYfYKH7EYpcUQmqNqJDBdz1uwX/HCEGmGJrYy/X5A/5k5YGjhm38l2LfdaShmPbEXzEG9C0OSvE5FOJ0cu2/gcd5A7PjtbBCOWd0oUH9sThgl5uA+ph8Ugyk5vDRrwJAsezrYdBkzFQPghwPkLQIyYJo1Q=
-  - secure: eqRadwjOhyWYAA2rdg2avNoxnkzB6XQj1Fgbv7EPRFZmQ7kV454j3jsgDQR/etXxsgfY/MOWd9cs1j17XnWHFrKdUGg/nGOYnCXnxFK9gZkaz4WsUBut7ADor9euXpahah99esVHaPeSKL/Ly5ujIAwFfNMieNvK0UV/dOWHuw7PfZ/kCgtInx90yuqMycHxBwTWPWUwEeOZgpxipth6nqlH+HyVM7E7t03SrmcYkE7T/G5/AC096h4yY6Wy+wRPl9K+ZJ/gPkpc5NFRztRfCeUGEbaaZVlmPxPmYS23gf09hZiZvzVARkxBRt83IzVEl2vnv3g4UHsJnD3hWmJIkJRttfVzdmARHVH2FJSjHJ3zMxKEfH9O06jwAbbM4LNCkkn92LnKZEZVlhWvAHnGzDxrUt2VJ07PH5LcMenoT1G6n7LgQKaRmd5tbzQy0IF+WjXjBYWLoks6pQGuot6HnsVtOM2n1n/Wrxx0tGWAsQ7ec/dyll3H0qwCs/C/yWxlPjW90rdfh2dDMAMZOcXB7hAwfCIxM3G61H/JnbACJlHOEppr7uHTXEFmtbS4D3+FaRMR9gwvjs0YEkLwZIzjdj6s//5SWzME60sY1ONdxDsQ7AEMCRqgXEsNrSzKqt0L/6WJUl9pJFYYitY0eGlAZ4Y1pA60OIFhn7HyUkQsHkQ=
-  - secure: KunIV7njUn+s3aAQTbdE0DLF6rJRzQYJOfhEcCNmE4uGnbYW9xPGfFUYJr3PP3Edh07kW54zLfWH6BXCzEFAbQBs/TCC8MO0DhmbhAWPxW1TI3pwPiwysHScYyeZLOpWDa8AuwU3msHYpdjEWcsgabUNdXaV+ce4e+6NGsl+F1CymAO7kMCGk1HOz6RKEgelzxb+Ds9VYG5ytR1/R4S2l5uJBttSJWBEH6HeFcBJyvW+oC1eBt2YqPu9Q9ZWkDDoQPVBgotheIb7m8NH//vOU6yxZ8IQ8mbEmBkF9zRM4HLS6/ETEXKLYwQc1/0FOHXxAvUExItsiuqSpKA4xQzY47vyJxsKRpDyaKBxfcKuVLXD5f1b0V01Phv3OaZe5mNqSvvxrfnQDhHK9JHESU+mLVCWp8/Cbn5HKrZ9Dr3gT9Hp8oknPcCSF3mTdGprSgjNYY6dP6UrPEBO/3iKwom7tOq67DvHVDVP7Q3aEu4LVEb/QYd5WNGNyEXKtHdjMGAAENFth2OQjF6Yvg5yUe87Kohw93yElILVWv2pCtVmap4XIcuDwM6bydzgD520cpQ4XFvpX8h56bR53rUkAYBoT1oxtULK7ptYwr8SwgTI6mh5zAajov4OvMdlmi92nUqIBG0B6q8c6Lvx0oyJW0PUUQP3qjCLn4ZD6liam+q+Ez0=
-  - secure: ra8w/ZfYU42cUVLeTsYfdfiTmlTNUJTgtUgnH6eWM0upO4fF5h8vd9P2x9g+XHgXRQGtOGxIRxa2ZFNm/BBLvQnpwASDKMfz4crqIWhLsIE51VRzKlSslap+ewhtsPUZ1mxSiK3/seqSURvBVYGZ0ZEH2DMGg0myY03LEE1qzOgE5ckt01JyCfIJKso/wPNPHDwgyHZILgYORDhr+8T27jlIYi3hXOfadqw/HqRjqMzzHewv8BLjGImUpjsmAFhicLa7AUlpJXQ4XswGWymrHneNHFjwd6fix4EPHgPVx6Ws5iNYQX4GbqmHrgfNBfU1+hFJk4Y+jg94ZELSr2ezVV+FhrRE1Rl25kpnvVZhlftZUzQkuVFX1mRqdtb18JuyQXGgqAtcxveHmXEnraInzp487OCeLWnbkxiLKx5WBHvEAAJ4xHMx5gUNtTeaIlpP1x5djtsLxihbxeZjV1Q0ByYb2JISXU80akPh5+0I6x7iweKH5u7iILOraFUCp48XW3PNTIpDnr/FEQKt5hNTGZudzmQ7HNik1DicG3OgpzLuJQL/rg+3/WxDezJLe9e0AH3i+PK8Ep7v8LeMQ7W1vzxMfjJtsHG/3aHMLJ0nwOvL/x+DbZh0Vo7f80fOt5prvf6GX8jim+EifO8woUwEWuqtRRBEHWvjBtyp6pqKYZA=
+    - IMAGE_NAME="limed/travis-test"
+    - COMMIT="${TRAVIS_COMMIT::8}"
+    - GO111MODULE=on
+    - secure: G+WsNhahU/9AUaMCbmG4PhyGaYqzR3gcHJQdXvqo5TLkV+7ScdpOo5PKduH7WskOmMzENc+UD+zjgXx+jH7xOMcXJ2KnId60/TNuH9LibbLE5LmP9eR6H6pAOaf2KxvKvMWcS/Xb7Iu+1w96Egc87EuvK6DwGUC5O2Dmo5gC00Ar+tpkGgGDxhVIl1XHEHLMNWtAlLFdOn7nFISSSU/jFX4PniIQo7G2VnmBnPS1o2BRYLrD07p91JhiJw8fsN79xE+46aFl81iGJVfpoaTpWlAQabDwb62CR9ngDUi6fCncgZ+ZvICVtgmOMjmDxgXw1cas51D6dRYNk9Ljjt+1oyTppcQndJd+RcH7sBwtWQM3M6rLRYSDuKWqfuD4/OZCE7SmI//Wxv6nv6P8tYjEAxo7rfSOKMR3KGCiwwDlXrxIm/NQwoA9OdD6UdRvn1cnSz0G/AVMsdKgixNMiHE+pGvVBpq6uEaQkK0xp4baIj55tuuXznT1YTtq52BWIYOTOK2LSUAMMkwjwvu4JPYfYKH7EYpcUQmqNqJDBdz1uwX/HCEGmGJrYy/X5A/5k5YGjhm38l2LfdaShmPbEXzEG9C0OSvE5FOJ0cu2/gcd5A7PjtbBCOWd0oUH9sThgl5uA+ph8Ugyk5vDRrwJAsezrYdBkzFQPghwPkLQIyYJo1Q=
+    - secure: eqRadwjOhyWYAA2rdg2avNoxnkzB6XQj1Fgbv7EPRFZmQ7kV454j3jsgDQR/etXxsgfY/MOWd9cs1j17XnWHFrKdUGg/nGOYnCXnxFK9gZkaz4WsUBut7ADor9euXpahah99esVHaPeSKL/Ly5ujIAwFfNMieNvK0UV/dOWHuw7PfZ/kCgtInx90yuqMycHxBwTWPWUwEeOZgpxipth6nqlH+HyVM7E7t03SrmcYkE7T/G5/AC096h4yY6Wy+wRPl9K+ZJ/gPkpc5NFRztRfCeUGEbaaZVlmPxPmYS23gf09hZiZvzVARkxBRt83IzVEl2vnv3g4UHsJnD3hWmJIkJRttfVzdmARHVH2FJSjHJ3zMxKEfH9O06jwAbbM4LNCkkn92LnKZEZVlhWvAHnGzDxrUt2VJ07PH5LcMenoT1G6n7LgQKaRmd5tbzQy0IF+WjXjBYWLoks6pQGuot6HnsVtOM2n1n/Wrxx0tGWAsQ7ec/dyll3H0qwCs/C/yWxlPjW90rdfh2dDMAMZOcXB7hAwfCIxM3G61H/JnbACJlHOEppr7uHTXEFmtbS4D3+FaRMR9gwvjs0YEkLwZIzjdj6s//5SWzME60sY1ONdxDsQ7AEMCRqgXEsNrSzKqt0L/6WJUl9pJFYYitY0eGlAZ4Y1pA60OIFhn7HyUkQsHkQ=
 
-before_install:
-- echo "Logging into dockerhub"
-- echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USER" --password-stdin
-- echo "Pulling builder"
-- docker pull limed/eks-deploytool:latest
+before_sript:
+  - SAFE_BRANCH_NAME=$(echo -n $TRAVIS_BRANCH | perl -pe's/[^a-zA-Z0-9_.-]/_/g' )
+  - REVISION_TAG="$SAFE_BRANCH_NAME-$TRAVIS_COMMIT"
+  - if [ "$TRAVIS_TAG" == "" ]; then SYMBOLIC_TAG="$SAFE_BRANCH_NAME-latest"; else SYMBOLIC_TAG="$TRAVIS_TAG"; fi
+  - echo "Branch $SAFE_BRANCH_NAME"
+  - echo "Tag $TRAVIS_TAG"
+  - if [ "$TRAVIS_TAG" == "" ]; then docker pull "$IMAGE_NAME:$SYMBOLIC_TAG" || true; fi
 
-stages:
-- name: Build Docker Image
-  if: branch = master
-- name: Deploy to stage
-  if: branch = master
 
-jobs:
-  include:
-  - stage: Build Docker Image
+script:
+  - docker build --tag "$IMAGE_NAME" --tag "$IMAGE_NAME:$COMMIT" .
+
+before_deploy:
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+  - docker tag $IMAGE_NAME "$IMAGE_NAME:$REVISION_TAG"
+  - docker tag $IMAGE_NAME "$IMAGE_NAME:$SYMBOLIC_TAG"
+
+deploy:
+  provider: script
+  on:
+    all_branches: true
+    condition: $TRAVIS_TAG != "" || $TRAVIS_BRANCH =~ ^(master|prod)$
     script:
-    - docker build --tag "$IMAGE_NAME" --tag "$IMAGE_NAME:$COMMIT" .
-    - docker push "$IMAGE_NAME"
-    - docker push "$IMAGE_NAME:$COMMIT"
-    - docker images
-  - stage: Deploy to stage
-    script:
-    - |
-      cat > aws_env << EOF
-      AWS_ACCESS_KEY_ID
-      AWS_SECRET_ACCESS_KEY
-      AWS_SESSION_TOKEN
-      AWS_SECURITY_TOKEN
-      EOF
-    - docker run --rm -it -v $(pwd):/code -e DOIT="true" -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY
-      limed/eks-deploytool:latest deploy stage "$IMAGE_NAME:$COMMIT"
+      - docker push "$IMAGE_NAME:$REVISION_TAG" && docker push "$IMAGE_NAME:$SYMBOLIC_TAG"
