@@ -23,7 +23,7 @@ script:
   - docker build --tag "$IMAGE_NAME" --tag "$IMAGE_NAME:$COMMIT" .
 
 before_deploy:
-  - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+  - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USER" --password-stdin
   - docker tag $IMAGE_NAME "$IMAGE_NAME:$REVISION_TAG"
   - docker tag $IMAGE_NAME "$IMAGE_NAME:$SYMBOLIC_TAG"
 
