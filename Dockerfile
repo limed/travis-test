@@ -1,18 +1,16 @@
 FROM golang:alpine AS build
 
+WORKDIR /go/src/github.com/limed/travis-test/
 
-RUN mkdir -p /build
-WORKDIR /build
-
-COPY main.go /build
-RUN go build -o main .
+COPY main.go .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 
 FROM alpine:latest
 
 RUN adduser -S -D -H -h /app appuser
 USER appuser
 
-COPY --from=build /build/main /app/
+COPY --from=build /go/src/github.com/limed/travis-test/main /app/main
 WORKDIR /app
 
 CMD ["./main"]
