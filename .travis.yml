@@ -32,5 +32,5 @@ deploy:
   on:
     all_branches: true
     condition: $TRAVIS_TAG != "" || $TRAVIS_BRANCH =~ ^(master|prod)$
-    script:
-      - docker push "$IMAGE_NAME:$REVISION_TAG" && docker push "$IMAGE_NAME:$SYMBOLIC_TAG"
+  script:
+    - docker push "$IMAGE_NAME:$REVISION_TAG" && docker push "$IMAGE_NAME:$SYMBOLIC_TAG"
