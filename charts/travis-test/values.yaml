@@ -11,6 +11,7 @@ image:
 
 hpa:
   enabled: false
+  minReplicas: 1
   maxReplicas: 10
   # average total CPU usage per pod (1-100)
   cpu:
