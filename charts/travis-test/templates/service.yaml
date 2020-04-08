@@ -11,5 +11,6 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+      nodePort: {{ .Values.service.nodePort | default "8081" }}
   selector:
     {{- include "travis-test.selectorLabels" . | nindent 4 }}
