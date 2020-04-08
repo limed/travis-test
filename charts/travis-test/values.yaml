@@ -1,4 +1,7 @@
 
+nameOverride: ""
+fullnameOverride: ""
+
 replicaCount: 1
 
 image:
